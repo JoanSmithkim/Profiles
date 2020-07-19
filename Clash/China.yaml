@@ -124,6 +124,15 @@ dns:
 proxies:
 # 支持的协议及加密算法示例请查阅 Clash 项目 README 以使用最新格式：https://github.com/Dreamacro/clash/blob/master/README.md
 
+  # HTTP
+- name: "解锁网易云灰色歌曲(在线)" 
+ type: http
+ server: unblockneteasemusic
+ port: 54444,
+ username: ""
+ password: !<str> ""
+ tls: false}
+
   # Shadowsocks(Websocket + TLS)
   - name: "CN1"
     type: ss
@@ -217,6 +226,14 @@ proxy-groups:
       - CN2
       - CN3
 
+#网易云节点选择
+Proxy Group:
+- name: Netease Music
+  type: select
+  proxies:
+  - DIRECT
+  - 网易云解锁
+  
 rule-providers:
   # name: # Provider 名称
   #   type: http # http 或 file
